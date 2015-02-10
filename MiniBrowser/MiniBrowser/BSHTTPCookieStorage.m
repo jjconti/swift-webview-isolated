@@ -135,6 +135,10 @@
     
     NSString* cookieDomain = [[theURL host] lowercaseString];
     
+    if (cookieDomain != nil) {
+        cookieFinder([@"." stringByAppendingString:cookieDomain],self.domainGlobalCookies);
+    }
+
     // find domain-global cookies
     NSRange range = [cookieDomain rangeOfString:@"."];
     if (range.location != NSNotFound) {
