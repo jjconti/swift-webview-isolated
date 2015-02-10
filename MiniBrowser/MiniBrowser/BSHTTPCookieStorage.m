@@ -22,8 +22,6 @@
 #error Need automatic reference counting to compile this.
 #endif
 
-#import "FoundationAdditionsMacros.h"
-#import "FoundationAdditions.h"
 #import "BSHTTPCookieStorage.h"
 
 
@@ -53,7 +51,6 @@
 @synthesize subdomainCookies = _subdomainCookies;
 @synthesize domainGlobalCookies = _domainGlobalCookies;
 
-
 -(void) removeCookiesNamed:(NSString*) cookieName
 {
     void (^removeCookiesInStorage)(NSMutableDictionary*) = ^(NSMutableDictionary* domainStorage) {
@@ -75,7 +72,6 @@
     NSString* domain = [[aCookie domain] lowercaseString];
     NSString* path = [aCookie path];
     NSString* name = [aCookie name];
-    
     NSMutableDictionary* domainStorage = [domain hasPrefix:@"."] ? self.domainGlobalCookies : self.subdomainCookies;
     
     NSMutableDictionary* pathStorage = [domainStorage objectForKey:domain];
@@ -190,27 +186,22 @@
 -(void) handleWebScriptCookies:(NSString*) jsCookiesString forURLString:(NSString*) urlString
 {
     if (![jsCookiesString isKindOfClass:[NSString class]]) {
-        DebugLog(@"Not a valid cookie string: %@",jsCookiesString);
         return;
     }
     if (![urlString isKindOfClass:[NSString class]]) {
-        DebugLog(@"Not a URL string: %@",urlString);
         return;
     }
     
     if ([@"undefined" isEqualToString:jsCookiesString] || [@"null" isEqualToString:jsCookiesString]) {
-        DebugLog(@"Invalid cookie string");
         return;
     }
     NSURL* jsUrl = [NSURL URLWithString:urlString];
     if (!jsUrl) {
-        DebugLog(@"Malformed URL String: %@",urlString);
         return;
     }
     
     NSString* const urlDomain = [jsUrl host];
     if (!urlDomain) {
-        DebugLog(@"No domain in URL %@ - ignoring.",urlDomain);
         return;
     }
     
@@ -342,8 +333,8 @@
 {
     BSHTTPCookieStorage* copy = [[[self class] allocWithZone:zone] init];
     if (copy) {
-        copy->_subdomainCookies = [self.subdomainCookies deepMutableCopy];
-        copy->_domainGlobalCookies = [self.domainGlobalCookies deepMutableCopy];
+        copy->_subdomainCookies = [self.subdomainCookies mutableCopy];
+        copy->_domainGlobalCookies = [self.domainGlobalCookies mutableCopy];
     }
     return copy;
 }
