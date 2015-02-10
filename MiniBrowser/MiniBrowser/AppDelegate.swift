@@ -44,6 +44,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         settings.saveCookieStorage(cookieStorage)
     }
 
+    @IBAction func delete(sender: NSButton) {
+        settings.deleteCookieStorage()
+        cookieStorage = settings.retrieveCookieStorage()
+    }
+
     @IBAction func show(sender: AnyObject) {
         var cookies = cookieStorage.cookiesForURL(NSURL(string: urlField.stringValue));
         var i = 1

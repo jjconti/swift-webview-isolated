@@ -27,4 +27,9 @@ class Settings: NSObject {
         var cookieStorage  = defaults.objectForKey(CookieStorageKey ) as NSData
         return NSKeyedUnarchiver.unarchiveObjectWithData(cookieStorage) as BSHTTPCookieStorage
     }
+
+    func deleteCookieStorage() {
+        defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(BSHTTPCookieStorage()), forKey: CookieStorageKey )
+        defaults.synchronize()
+    }
 }

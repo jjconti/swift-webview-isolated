@@ -679,10 +679,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="672" height="542"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <webView placeholderIntrinsicWidth="559" placeholderIntrinsicHeight="423" translatesAutoresizingMaskIntoConstraints="NO" id="JvC-0p-Zq5">
-                        <rect key="frame" x="44" y="53" width="559" height="423"/>
-                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12"/>
-                    </webView>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MaI-1E-J4H">
                         <rect key="frame" x="44" y="489" width="514" height="22"/>
                         <constraints>
@@ -708,28 +704,46 @@
                         <rect key="frame" x="530" y="19" width="73" height="19"/>
                         <buttonCell key="cell" type="roundRect" title="Save" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PEp-3i-dVq">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="controlContent"/>
+                            <font key="font" metaFont="cellTitle"/>
                         </buttonCell>
                         <connections>
                             <action selector="save:" target="Voe-Tx-rLC" id="i63-ga-7lq"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WfS-Ft-b9O">
+                        <rect key="frame" x="449" y="19" width="73" height="19"/>
+                        <buttonCell key="cell" type="roundRect" title="Delete" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jZb-Th-mhL">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="titleBar" size="12"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="delete:" target="Voe-Tx-rLC" id="G0G-bD-iXJ"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7me-EN-NJA">
                         <rect key="frame" x="44" y="19" width="138" height="19"/>
                         <buttonCell key="cell" type="roundRect" title="Show cookies for this" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mrn-S5-qEI">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="controlContent"/>
+                            <font key="font" metaFont="cellTitle"/>
                         </buttonCell>
                         <connections>
                             <action selector="show:" target="Voe-Tx-rLC" id="k6b-bp-aRf"/>
                         </connections>
                     </button>
+                    <webView misplaced="YES" placeholderIntrinsicWidth="559" placeholderIntrinsicHeight="423" translatesAutoresizingMaskIntoConstraints="NO" id="JvC-0p-Zq5">
+                        <rect key="frame" x="44" y="56" width="559" height="423"/>
+                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                            <nil key="identifier"/>
+                        </webPreferences>
+                    </webView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="OkU-Jw-HW2" firstAttribute="leading" secondItem="WfS-Ft-b9O" secondAttribute="trailing" constant="8" id="1PD-BU-uKe"/>
                     <constraint firstAttribute="bottom" secondItem="OkU-Jw-HW2" secondAttribute="bottom" constant="20" id="81e-Og-azi"/>
                     <constraint firstItem="MaI-1E-J4H" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="31" id="8Ls-Zb-Gfl"/>
                     <constraint firstItem="JvC-0p-Zq5" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="44" id="8cY-dR-MLX"/>
                     <constraint firstItem="gfI-bn-Xj7" firstAttribute="leading" secondItem="MaI-1E-J4H" secondAttribute="trailing" constant="8" id="Ef8-FR-LZw"/>
+                    <constraint firstAttribute="bottom" secondItem="WfS-Ft-b9O" secondAttribute="bottom" constant="20" id="GTx-Kl-Y1H"/>
                     <constraint firstAttribute="trailing" secondItem="gfI-bn-Xj7" secondAttribute="trailing" constant="80" id="GWy-SA-ltg"/>
                     <constraint firstAttribute="bottom" secondItem="7me-EN-NJA" secondAttribute="bottom" constant="20" id="I9x-W3-lsc"/>
                     <constraint firstItem="7me-EN-NJA" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="44" id="Rd8-Sz-vl5"/>
@@ -743,7 +757,7 @@
                     <constraint firstItem="gfI-bn-Xj7" firstAttribute="leading" secondItem="MaI-1E-J4H" secondAttribute="trailing" constant="8" id="zIZ-h8-qJA"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="399" y="389"/>
+            <point key="canvasLocation" x="457" y="389"/>
         </window>
     </objects>
 </document>
