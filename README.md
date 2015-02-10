@@ -5,7 +5,7 @@ Mini web browser. (Attempt to create an) Example of use of an isolated WebView f
 A problem with Cocoa's WebView in Mac OS X[1] is that there is a common cookies jar for all the process.
 This means that, for example, Safari shares its sessions with every WebView instance you have in your apps[2].
 
-This is a problem if you want your app to bahaive independiently from Safari and from other programs.
+This is a problem if you want your app to behave independiently from Safari and from other programs.
 
 For this implementation I'm following this articles:
 
