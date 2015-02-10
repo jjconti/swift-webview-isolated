@@ -80,9 +80,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     override func webView(sender: WebView!, resource: AnyObject!, didFinishLoadingFromDataSource: WebDataSource!) {
         urlField.stringValue = sender.mainFrameURL
-        var jsCookies = webView.stringByEvaluatingJavaScriptFromString("document.cookie")
-        var jsURL = webView.stringByEvaluatingJavaScriptFromString("document.URL")
-        cookieStorage.handleWebScriptCookies(jsCookies, forURLString: jsURL)
     }
 
     override func webView(sender: WebView, resource: AnyObject!, didFailLoadingWithError error: NSError!, fromDataSource: WebDataSource!) {
