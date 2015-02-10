@@ -11,6 +11,8 @@
 		819EA0B81A8AAB2500390B64 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819EA0B71A8AAB2500390B64 /* Images.xcassets */; };
 		819EA0BB1A8AAB2500390B64 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 819EA0B91A8AAB2500390B64 /* MainMenu.xib */; };
 		819EA0C71A8AAB2500390B64 /* MiniBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EA0C61A8AAB2500390B64 /* MiniBrowserTests.swift */; };
+		819EA0D41A8AABCC00390B64 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EA0D11A8AABCC00390B64 /* Settings.swift */; };
+		819EA0D51A8AABCC00390B64 /* BSHTTPCookieStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 819EA0D21A8AABCC00390B64 /* BSHTTPCookieStorage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,10 @@
 		819EA0C01A8AAB2500390B64 /* MiniBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		819EA0C51A8AAB2500390B64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		819EA0C61A8AAB2500390B64 /* MiniBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniBrowserTests.swift; sourceTree = "<group>"; };
+		819EA0D01A8AABCC00390B64 /* MiniBrowser-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MiniBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
+		819EA0D11A8AABCC00390B64 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		819EA0D21A8AABCC00390B64 /* BSHTTPCookieStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHTTPCookieStorage.m; sourceTree = "<group>"; };
+		819EA0D31A8AABCC00390B64 /* BSHTTPCookieStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHTTPCookieStorage.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,10 @@
 		819EA0B21A8AAB2500390B64 /* MiniBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				819EA0D01A8AABCC00390B64 /* MiniBrowser-Bridging-Header.h */,
+				819EA0D11A8AABCC00390B64 /* Settings.swift */,
+				819EA0D21A8AABCC00390B64 /* BSHTTPCookieStorage.m */,
+				819EA0D31A8AABCC00390B64 /* BSHTTPCookieStorage.h */,
 				819EA0B51A8AAB2500390B64 /* AppDelegate.swift */,
 				819EA0B71A8AAB2500390B64 /* Images.xcassets */,
 				819EA0B91A8AAB2500390B64 /* MainMenu.xib */,
@@ -205,7 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				819EA0D41A8AABCC00390B64 /* Settings.swift in Sources */,
 				819EA0B61A8AAB2500390B64 /* AppDelegate.swift in Sources */,
+				819EA0D51A8AABCC00390B64 /* BSHTTPCookieStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +336,7 @@
 				INFOPLIST_FILE = MiniBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/juanjo/watu/swift-webview-isolated/MiniBrowser/MiniBrowser/MiniBrowser-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -335,6 +348,7 @@
 				INFOPLIST_FILE = MiniBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/juanjo/watu/swift-webview-isolated/MiniBrowser/MiniBrowser/MiniBrowser-Bridging-Header.h";
 			};
 			name = Release;
 		};
