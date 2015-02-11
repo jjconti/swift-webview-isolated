@@ -14,6 +14,6 @@ For this implementation I'm following this articles:
 
 The current implementation works for some websites but others fail to load correctly after login, for example gmail and newrelic.
 
-[1] In Cocoa Touch (for Iphones and I-Pads) it works exactly oposite: each app has its own cookie jar.
+[1] In Cocoa Touch (for iOS) it works exactly oposite: each app has its own cookie jar.
 
 [2] This is not true for sandboxed apps but I don't want to rely on this to solve the problem.
