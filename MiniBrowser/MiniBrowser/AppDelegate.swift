@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         cookieStorage = settings.retrieveCookieStorage()
         webView.resourceLoadDelegate = self
-        //webView.policyDelegate = self
+        webView.policyDelegate = self
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
